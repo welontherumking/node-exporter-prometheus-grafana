@@ -5,24 +5,6 @@ Steps:
 version: "3.9"
 
 services:
-  grafana:
-    container_name: Grafana
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana-data:/var/lib/grafana
-      - grafana-configs:/etc/grafana
-
-  prometheus:
-    container_name: Prometheus
-    image: prom/prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - prom-data:/prometheus
-      - prom-configs:/etc/prometheus
-
   node-exporter:
     container_name: NodeExporter
     image: prom/node-exporter
@@ -37,6 +19,25 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.mount-points-exclude'
       - '^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)'
+
+  prometheus:
+    container_name: Prometheus
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - prom-data:/prometheus
+      - prom-configs:/etc/prometheus
+
+  grafana:
+    container_name: Grafana
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - grafana-configs:/etc/grafana
+
 volumes:
   grafana-data:
   grafana-configs:
