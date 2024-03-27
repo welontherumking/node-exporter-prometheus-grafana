@@ -84,4 +84,4 @@ docker-compose restart
 
 Go to the prometheus web interface via http://server-ip:9090 then go to `Status` -> `Targets` section. There should be a new Targets that we added in the `prometheus.yml` file
 
-### Now in http://<server-ip>:3000 you can watch the graphs
+### Now in http://server-ip:3000 you can watch the graphs
