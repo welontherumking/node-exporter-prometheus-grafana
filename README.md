@@ -50,7 +50,7 @@ volumes:
 docker-compose up -d
 ```
 
-3. Checking it out. Go to http://<server-ip>:3000/ and login to the admin account then Grafana ask you to change your password, change it
+3. Checking it out. Go to http://<server ip>:3000/ and login to the admin account then Grafana ask you to change your password, change it
 
 3. Adding Prometheus to Grafana:
 - Click `Add your first data source`
@@ -82,6 +82,6 @@ Restart containers
 docker-compose restart
 ```
 
-Go to the prometheus web interface via http://<server-ip>:9090 then go to `Status` -> `Targets` section. There should be a new Targets that we added in the `prometheus.yml` file
+Go to the prometheus web interface via http://<server ip>:9090 then go to `Status` -> `Targets` section. There should be a new Targets that we added in the `prometheus.yml` file
 
 ### Now in http://<server-ip>:3000 you can watch the graphs
